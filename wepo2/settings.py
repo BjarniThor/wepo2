@@ -113,6 +113,7 @@ ROOT_URLCONF = 'wepo2.urls'
 WSGI_APPLICATION = 'wepo2.wsgi.application'
 
 TEMPLATE_DIRS = (
+                 os.path.join(SITE_ROOT, 'Templates'), 
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.

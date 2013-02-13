@@ -53,6 +53,7 @@
     <Folder Include="wepo2\db\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Examtool\Templates\index.html" />
     <Content Include="wepo2\db\dbExamtool.db" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Python Tools\Microsoft.PythonTools.Django.targets" />

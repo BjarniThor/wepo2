@@ -6,7 +6,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     # Examples:
-    # url(r'^$', 'wepo2.views.home', name='home'),
+    url(r'^$', 'Examtool.views.index', name='index'),
     # url(r'^wepo2/', include('wepo2.wepo2.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
