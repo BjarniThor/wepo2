@@ -7,24 +7,23 @@
 <p>our question isn't valid</p>
 {% endif %}
 
-<form method="post" action="{% load url from future %}">
-    {% csrf_token %}
+<form method="post" name="exam" action="{% load url from future %}">
     <table>
         <tr>
-            <td>{{ form.e_name.label_tag }}</td>
-            <td>{{ form.e_name }}</td>
+            <td>{{ exam.e_name.label_tag }}</td>
+            <td>{{ exam.e_name }}</td>
         </tr>
         <tr>
-            <td>{{ form.e_author.label_tag }}</td>
-            <td>{{ form.e_author }}</td>
+            <td>{{ exam.e_author.label_tag }}</td>
+            <td>{{ exam.e_author }}</td>
         </tr>
 <tr>
-            <td>{{ form.e_course.label_tag }}</td>
-            <td>{{ form.e_course }}</td>
+            <td>{{ exam.e_course.label_tag }}</td>
+            <td>{{ exam.e_course }}</td>
         </tr>
     </table>
 
-    <input type="submit" value="Create" />
+    <input type="submit" name="createNew" value="Create" />
     <input type="hidden" name="next" value="{{ next }}" />
 </form>
 

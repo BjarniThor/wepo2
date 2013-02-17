@@ -1,4 +1,6 @@
 from django.db import models
+from django.forms import ModelForm
+from django import forms
 import datetime
 
 # Create your models here.
@@ -32,3 +34,12 @@ class Linq(models.Model):
     user_id = models.IntegerField()
     exam_id = models.IntegerField()
 
+class ExamForm(ModelForm):
+    class Meta:
+        model = Exam
+'''
+class ExamForm(forms.Form):
+    e_name = forms.CharField(max_length=100)
+    e_author = forms.CharField(max_length=100)
+    e_course = forms.DateField(required=False)
+'''
