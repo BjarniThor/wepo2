@@ -29,6 +29,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Examtool\admin.py" />
     <Compile Include="Examtool\models.py" />
     <Compile Include="Examtool\tests.py" />
     <Compile Include="Examtool\urls_temp.py" />
@@ -56,6 +57,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Examtool\Templates\base.html" />
+    <Content Include="Examtool\Templates\create.html" />
+    <Content Include="Examtool\Templates\exam_detail.html" />
     <Content Include="Examtool\Templates\index.html" />
     <Content Include="Examtool\Templates\registration\login.html" />
     <Content Include="Examtool\Templates\home.html" />

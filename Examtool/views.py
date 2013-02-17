@@ -6,20 +6,21 @@ from django.http import Http404
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 
-
-def index(request):
-    post = Exam.objects.all()   
-    #quest = Question.objects.get(pk=1)
-    model = { "post" : post }
-             # "quest" : quest }
-    # print post.text
-    return render_to_response("base.html", model)
-
 @login_required
-def home(request):
-    userObj = { "user" : request.user }
+def home(request): 
+    allExams = Exam.objects.all()
 
+    examIds = Linq.objects.filter(user_id=request.user.id)
+            
+    userObj = { "user" : request.user,
+                "exams" : allExams,
+                "linq" : examIds }
+    
     if not request.user.is_authenticated():
         return render_to_response('home.html', {'user': 'Not loggged in'}, )
     else:
         return render_to_response('home.html', userObj , RequestContext(request))
+
+@login_required
+def create(request):
+    return render_to_response('create.html')

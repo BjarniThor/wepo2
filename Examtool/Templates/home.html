@@ -1,12 +1,35 @@
-<html>
-<head><title></title></head>
+{% extends "base.html" %}
+{% block title %}User dashboard{% endblock %}
+{%block content %}
 
-    <body>
-        {% if user.is_authenticated %}
-        <h1>You are now logged in</h1>
-        {% else %}
-        <p>Welcome, new user. Please log in.</p>
-        {% endif %}
+    {% if user.is_staff%}
+<h1>You are now logged in as teacher, welcome {{user.first_name}}</h1>
+<p>These are your created tests</p>
+    <ul>
+            {% for l in linq %}
+                {% for e in exams %}
+                    {%if l.exam_id == e.id %}
+                    <li>{{e.e_name}}</li>
+                    {% endif %}
+                {% endfor %}
+        {% endfor %}
+        <a href="/create/">Create new exam</a>
+        </ul>
+    
+    {% else %}
+<p>Welcome {{ user.first_name }}.
+    Here are your available tests:
+    <ul>
+        {% for l in linq %}
+            {% for e in exams %}
+                {%if l.exam_id == e.id %}
+                <li>{{e.e_name}}</li>
+                {% endif %}
+            {% endfor %}
+    {% endfor %}
+    </ul>
+</p>
 
-    </body>
-</html>
+    {% endif %}
+
+{% endblock %}
