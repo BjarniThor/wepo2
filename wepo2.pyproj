@@ -31,7 +31,7 @@
   <ItemGroup>
     <Compile Include="Examtool\models.py" />
     <Compile Include="Examtool\tests.py" />
-    <Compile Include="Examtool\urls.py" />
+    <Compile Include="Examtool\urls_temp.py" />
     <Compile Include="Examtool\views.py" />
     <Compile Include="Examtool\__init__.py" />
     <Compile Include="manage.py" />

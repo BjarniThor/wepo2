@@ -17,5 +17,8 @@ def index(request):
 
 @login_required
 def home(request):
-    user = User.username
-    return render_to_response("home.html", context_instance = RequestContext( request, user ))
+    user = User.get_username(request.user)
+    if not request.user.is_authenticated():
+        return render_to_response('home.html', {'user': 'Not loggged in'}, )
+    else:
+        return render_to_response('home.html', {'user': 'Succesfully loged in'}, RequestContext(request))
