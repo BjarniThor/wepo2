@@ -1,14 +1,14 @@
 <html>
-<head><title>Examtool</title></head>
+<head><title></title></head>
 
-    <body>
-        <form method="post" action="">
-            {{ form }}
-        </form>
-        <h1>{{ post.name }}</h1>
-        <h1>{{ post.e_course }}</h1>
-        <h2>{{ quest.q_text }}</h2>
+<body>
 
+    { {% block content %}
+      {% endblock %}
 
-    </body>
+    <h1>{{ post.name }}</h1>
+    <h1>{{ post.e_course }}</h1>
+    <h2>{{ quest.q_text }}</h2>
+
+</body>
 </html>

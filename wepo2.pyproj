@@ -31,6 +31,7 @@
   <ItemGroup>
     <Compile Include="Examtool\models.py" />
     <Compile Include="Examtool\tests.py" />
+    <Compile Include="Examtool\urls.py" />
     <Compile Include="Examtool\views.py" />
     <Compile Include="Examtool\__init__.py" />
     <Compile Include="manage.py" />
@@ -49,11 +50,16 @@
   <ItemGroup>
     <Folder Include="Examtool\" />
     <Folder Include="Examtool\Templates\" />
+    <Folder Include="Examtool\Templates\registration\" />
     <Folder Include="wepo2\" />
     <Folder Include="wepo2\db\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Examtool\Templates\base.html" />
     <Content Include="Examtool\Templates\index.html" />
+    <Content Include="Examtool\Templates\login_error.html" />
+    <Content Include="Examtool\Templates\registration\login.html" />
+    <Content Include="Examtool\Templates\user.html" />
     <Content Include="wepo2\db\dbExamtool.db" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Python Tools\Microsoft.PythonTools.Django.targets" />

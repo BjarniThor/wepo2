@@ -34,11 +34,11 @@ DATABASES = {
 # timezone as the operating system.
 # If running in a Windows environment this must be set to the same as your
 # system time zone.
-TIME_ZONE = 'Iceland'
+TIME_ZONE = 'Atlantic/Reykjavik'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'is'
 
 SITE_ID = 1
 
@@ -71,6 +71,10 @@ STATIC_ROOT = ''
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
 STATIC_URL = '/static/'
+
+#This is ours---------------------------
+LOGIN_URL = '/accounts/login'
+LOGIN_REDIRECT_URL = '/home'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
@@ -111,6 +115,8 @@ ROOT_URLCONF = 'wepo2.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = 'wepo2.wsgi.application'
+
+
 
 TEMPLATE_DIRS = (
                  os.path.join(SITE_ROOT, 'Templates'), 
