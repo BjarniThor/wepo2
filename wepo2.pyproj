@@ -57,9 +57,8 @@
   <ItemGroup>
     <Content Include="Examtool\Templates\base.html" />
     <Content Include="Examtool\Templates\index.html" />
-    <Content Include="Examtool\Templates\login_error.html" />
     <Content Include="Examtool\Templates\registration\login.html" />
-    <Content Include="Examtool\Templates\user.html" />
+    <Content Include="Examtool\Templates\home.html" />
     <Content Include="wepo2\db\dbExamtool.db" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Python Tools\Microsoft.PythonTools.Django.targets" />
