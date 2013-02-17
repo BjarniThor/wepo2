@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}Create new - Questions{% endblock %}
+{% block content %}
+<!--Check for errors-->
+{% if question.errors %}
+<p>Your question isn't valid</p>
+{% endif %}
+
+<form method="post" name="exam" action=".">
+    {% csrf_token %}
+    <table>
+        <tr>
+            <td>{{ questions.q_text.label_tag }}</td>
+            <td>{{ questions.q_text }}</td>
+        </tr>
+    </table>
+    <p>Answers are below this</p>
+    <table>
+        <tr>
+            <td>{{ choices.q_optiona.label_tag }}</td>
+            <td>{{ choices.q_optiona }}</td>
+        </tr>
+        <tr>
+            <td>{{ choices.q_optionb.label_tag }}</td>
+            <td>{{ choices.q_optionb }}</td>
+        </tr>
+        <tr>
+            <td>{{ choices.q_optionc.label_tag }}</td>
+            <td>{{ choices.q_optionc }}</td>
+        </tr>
+    </table>
+    <p>Which question is the correct answer, below please (a,b or c)</p>
+    <table>
+        <tr>
+            <td>{{ choices.q_answer.label_tag }}</td>
+            <td>{{ choices.q_answer }}</td>
+        </tr>
+    </table>
+
+    <input type="submit" name="createNew" value="Create" />
+    <input type="hidden" name="next" value="{{ next }}" />
+</form>
+
+{% endblock %}

@@ -6,12 +6,10 @@
 <h1>You are now logged in as teacher, welcome {{user.first_name}}</h1>
 <p>These are your created tests</p>
     <ul>
-            {% for l in linq %}
-                {% for e in exams %}
-                    {%if l.exam_id == e.id %}
-                    <li>{{e.e_name}}</li>
-                    {% endif %}
-                {% endfor %}
+        {% for e in exams %}
+            {% if e.e_author == user.username %}
+            <li>{{e.e_name}}</li>
+            {%endif%}
         {% endfor %}
         <a href="/create/">Create new exam</a>
         </ul>
@@ -20,13 +18,9 @@
 <p>Welcome {{ user.first_name }}.
     Here are your available tests:
     <ul>
-        {% for l in linq %}
-            {% for e in exams %}
-                {%if l.exam_id == e.id %}
-                <li>{{e.e_name}}</li>
-                {% endif %}
-            {% endfor %}
-    {% endfor %}
+        {% for e in exams %}
+            <li>{{e.e_name}}</li>
+        {% endfor %}
     </ul>
 </p>
 

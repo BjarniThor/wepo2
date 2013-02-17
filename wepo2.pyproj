@@ -58,6 +58,7 @@
   <ItemGroup>
     <Content Include="Examtool\Templates\base.html" />
     <Content Include="Examtool\Templates\create.html" />
+    <Content Include="Examtool\Templates\createQuestion.html" />
     <Content Include="Examtool\Templates\exam_detail.html" />
     <Content Include="Examtool\Templates\index.html" />
     <Content Include="Examtool\Templates\registration\login.html" />

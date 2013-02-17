@@ -15,17 +15,18 @@ class Exam(models.Model):
         return self.e_name
 
 class Question(models.Model):
-    e_id = models.ForeignKey(Exam)
-    q_name = models.CharField(max_length=64)
+    #e_id = models.ForeignKey(Exam)
     q_text = models.CharField(max_length=256)
 
     def __unicode__(self):
         return self.q_name
 
 class QuestionChoices(models.Model):
-    q_id = models.ForeignKey(Question)
-    q_option = models.CharField(max_length=256)
-    q_outcome = models.BooleanField()
+    #q_id = models.ForeignKey(Question)
+    q_optiona = models.CharField(max_length=256)
+    q_optionb = models.CharField(max_length=256)
+    q_optionc = models.CharField(max_length=256)
+    q_answer = models.CharField(max_length=1)
 
     def __unicode__(self):
         return self.q_option
@@ -37,6 +38,14 @@ class Linq(models.Model):
 class ExamForm(ModelForm):
     class Meta:
         model = Exam
+
+class QuestionForm(ModelForm):
+    class Meta:
+        model = Question
+
+class QuestionChoicesForm(ModelForm):
+    class Meta:
+        model = QuestionChoices
 '''
 class ExamForm(forms.Form):
     e_name = forms.CharField(max_length=100)

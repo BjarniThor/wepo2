@@ -30,11 +30,32 @@ def create(request):
         f = ExamForm(request.POST)        
         if f.is_valid():
             new_exam = f.save()
-            return HttpResponseRedirect(reverse('Examtool.views.home'))
+            return HttpResponseRedirect(reverse('Examtool.views.createQuestion'))
         else:
             return HttpResponseRedirect(reverse('Examtool.views.create'))
     else:
         f = ExamForm()
         fe = { "fex" : f }
         return render_to_response('create.html', fe, RequestContext(request))
-    
+   
+def createQuestion(request):
+    exams = Exam.objects.filter(e_author='dabs').order_by('id')
+    if request.method == 'POST':
+        q = QuestionForm(request.POST), QuestionChoicesForm(request.POST)
+        #ugly fix
+        #q[0].Meta.model.e_id = exams.id
+        #if q[0].is_valid() and q[1].is_valid():
+        for e in q:
+            e.save()
+        return HttpResponseRedirect(reverse('Examtool.views.home'))
+        #else:
+            #return HttpResponseRedirect(reverse('Examtool.views.create'))
+    else:
+        q = QuestionForm()
+        qc = QuestionChoicesForm()
+        question = { "questions" : q,
+                      "choices" : qc }
+        return render_to_response('createQuestion.html', question, RequestContext(request))
+        
+
+            
