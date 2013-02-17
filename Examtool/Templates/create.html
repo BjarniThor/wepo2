@@ -3,24 +3,34 @@
 {% block title %}Create new - Quest away{% endblock %}
 {% block content %}
 <!--Check for errors-->
-{% if form.errors %}
-<p>our question isn't valid</p>
+{% if f.errors %}
+<p>your question isn't valid</p>
 {% endif %}
 
-<form method="post" name="exam" action="{% load url from future %}">
+<form method="post" name="exam" action=".">
+    {% csrf_token %}
     <table>
         <tr>
-            <td>{{ exam.e_name.label_tag }}</td>
-            <td>{{ exam.e_name }}</td>
+            <td>{{ fex.e_name.label_tag }}</td>
+            <td>{{ fex.e_name }}</td>
         </tr>
         <tr>
-            <td>{{ exam.e_author.label_tag }}</td>
-            <td>{{ exam.e_author }}</td>
+            <td>{{ fex.e_author.label_tag }}</td>
+            <td>{{ fex.e_author }}</td>
         </tr>
-<tr>
-            <td>{{ exam.e_course.label_tag }}</td>
-            <td>{{ exam.e_course }}</td>
+        <tr>
+            <td>{{ fex.e_course.label_tag }}</td>
+            <td>{{ fex.e_course }}</td>
         </tr>
+        <tr>
+            <td>{{ fex.e_datecreated.label_tag }}</td>
+            <td>{{ fex.e_datecreated }}</td>
+        </tr>
+        <tr>
+            <td>{{ fex.e_expire.label_tag }}</td>
+            <td>{{ fex.e_expire }}</td>
+        </tr>
+
     </table>
 
     <input type="submit" name="createNew" value="Create" />
